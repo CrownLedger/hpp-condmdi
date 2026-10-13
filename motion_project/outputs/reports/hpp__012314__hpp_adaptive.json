@@ -65,7 +65,7 @@
   "velocity_vs_target": {
     "err_at_constraints_mps": 0.23781532243439538,
     "err_all_mps": 0.20258681802753215,
-    "speed_corr_primary": 0.9868922829059756
+    "speed_corr_primary": 0.9868922829059764
   },
   "constraint_vs_original": {
     "mean": 0.002653615997873277,

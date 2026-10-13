@@ -1,0 +1,140 @@
+{
+  "motion_id": "cmu_104_41",
+  "captions": [],
+  "source": "humanml3d_raw_joints_processed_with_notebook_pipeline",
+  "fps": 20.0,
+  "skeleton": {
+    "joint_names": [
+      "pelvis",
+      "left_hip",
+      "right_hip",
+      "spine1",
+      "left_knee",
+      "right_knee",
+      "spine2",
+      "left_ankle",
+      "right_ankle",
+      "spine3",
+      "left_foot",
+      "right_foot",
+      "neck",
+      "left_collar",
+      "right_collar",
+      "head",
+      "left_shoulder",
+      "right_shoulder",
+      "left_elbow",
+      "right_elbow",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "joint_parents": [
+      -1,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      9,
+      9,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ],
+    "reference_bone_lengths": [
+      0.0,
+      0.10310018216336848,
+      0.10986771450125878,
+      0.13160271208443272,
+      0.39358922950761593,
+      0.39012611312884904,
+      0.14316382829855115,
+      0.4322149467118398,
+      0.4257075485243247,
+      0.05736214611243621,
+      0.14338110142940919,
+      0.14954087883954312,
+      0.21934939297618034,
+      0.13745014529921337,
+      0.1433607719184817,
+      0.10310862750566756,
+      0.1315577333695997,
+      0.1230032856726152,
+      0.25692463084331835,
+      0.26313227583140597,
+      0.26601048652714854,
+      0.26971762981871905
+    ],
+    "left_right_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        20,
+        21
+      ]
+    ],
+    "end_effector_indices": [
+      7,
+      8,
+      10,
+      11,
+      15,
+      20,
+      21
+    ],
+    "end_effectors": {
+      "left_hand": 20,
+      "right_hand": 21,
+      "left_ankle": 7,
+      "right_ankle": 8,
+      "left_foot": 10,
+      "right_foot": 11,
+      "head": 15
+    },
+    "coordinate_system": {
+      "up_axis": "+Y",
+      "forward_axis": "+Z (body facing at frame 0)",
+      "handedness": "right-handed",
+      "units": "metres",
+      "root_origin": "pelvis x,z = 0 at frame 0; y = height above floor",
+      "skeleton_scale": "HumanML3D uniform skeleton (target offsets of clip 000021)"
+    }
+  }
+}

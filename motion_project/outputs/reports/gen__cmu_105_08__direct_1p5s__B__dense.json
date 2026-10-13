@@ -1,0 +1,282 @@
+{
+  "name": "cmu_105_08__direct_1p5s__B__dense",
+  "record": {
+    "checkpoint": "/root/hpp-condmdi/save/condmdi_random_joints/model000750000.pt",
+    "checkpoint_sha256": "e66f1f8697d0ff6437d35e9931b4a3138045b5b31415fae9180d4f6b5b01f036",
+    "sampler": "GaussianDiffusion.p_sample_loop",
+    "diffusion_steps": 1000,
+    "guidance_param": 0.0,
+    "text": "",
+    "imputate": false,
+    "feature_mode": "pos_rot_vel",
+    "seeds": [
+      10
+    ],
+    "batched_repetitions": 3,
+    "n_frames": 196,
+    "max_frames": 196,
+    "observed_joint_frames": 364,
+    "observed_feature_entries": 3420,
+    "normalisation": "dataset/HumanML3D/Mean_abs_3d.npy, Std_abs_3d.npy (GMD abs-root statistics)",
+    "clip": "cmu_105_08",
+    "projector": "direct_1p5s",
+    "experiment": "B",
+    "obs_source": "rough",
+    "root_policy": "dense",
+    "torso_orientation_as": "none",
+    "seconds": 38.5,
+    "mask_counts": {
+      "hpp_position_observations": 176,
+      "root_added": 188,
+      "torso_as_joint": 0
+    }
+  },
+  "reps": [
+    {
+      "mpjpe_vs_original_m": 0.11182046001609268,
+      "end_effector_err_vs_original_m": {
+        "left_wrist": 0.1648332508246972,
+        "right_wrist": 0.18707079593773546,
+        "left_ankle": 0.1000384164958159,
+        "right_ankle": 0.08164849145149713,
+        "left_foot": 0.14016049231169272,
+        "right_foot": 0.07790244484590227
+      },
+      "root_vs_original": {
+        "mean_m": 0.07466183478928694,
+        "max_m": 0.18150066490307795,
+        "mean_xz_m": 0.07413670878096457,
+        "mean_y_m": 0.003816494224022846,
+        "final_disp_err_m": 0.08471322867527689
+      },
+      "bone_length": {
+        "max_dev_m": 0.01591644777272544,
+        "mean_dev_m": 0.0020274972399307884,
+        "std_per_bone_mean_m": 0.0020637944532340053
+      },
+      "foot_sliding": {
+        "mean_mps": 0.30805131788734896,
+        "p95_mps": 1.6233490073955856,
+        "contact_frames": 601
+      },
+      "ground_penetration": {
+        "min_foot_height_m": -0.012884341180324554,
+        "frames_below_floor_frac": 0.32142857142857145,
+        "mean_depth_when_below_m": 0.00371665276941799
+      },
+      "temporal": {
+        "duration_equal": true,
+        "frames": 196,
+        "ref_frames": 196,
+        "contact_events": {
+          "recall": 1.0,
+          "precision": 0.90625,
+          "ref_events": 29,
+          "test_events": 32
+        },
+        "direction_events": {
+          "recall": 0.5,
+          "precision": 0.4827586206896552,
+          "ref_events": 30,
+          "test_events": 29
+        }
+      },
+      "jerk_mps3": 189.82286414707508,
+      "finite": true,
+      "constraint_vs_target": {
+        "mean": 0.09941670995129591,
+        "p95": 0.17958299137328532,
+        "max": 0.23484574651973278,
+        "n": 176
+      },
+      "root_vs_target": {
+        "mean_m": 0.07466183478928694,
+        "max_m": 0.18150066490307795,
+        "mean_xz_m": 0.07413670878096457,
+        "mean_y_m": 0.003816494224022846,
+        "final_disp_err_m": 0.08471322867527689
+      },
+      "velocity_vs_target": {
+        "err_at_constraints_mps": 0.17733111052850042,
+        "err_all_mps": 0.2511852990812675,
+        "speed_corr_primary": 0.8806778954370209
+      },
+      "constraint_vs_original": {
+        "mean": 0.09941670995129591,
+        "p95": 0.17958299137328532,
+        "max": 0.23484574651973278,
+        "n": 176
+      },
+      "constraint_vs_target_incl_root": {
+        "mean": 0.08662560462254132,
+        "p95": 0.16770079656231077,
+        "max": 0.23484574651973278,
+        "n": 364
+      }
+    },
+    {
+      "mpjpe_vs_original_m": 0.10419311422639463,
+      "end_effector_err_vs_original_m": {
+        "left_wrist": 0.15389052699367248,
+        "right_wrist": 0.15746568181857049,
+        "left_ankle": 0.09808180956167944,
+        "right_ankle": 0.0747071667118459,
+        "left_foot": 0.12603335360635687,
+        "right_foot": 0.07312251817242509
+      },
+      "root_vs_original": {
+        "mean_m": 0.06444101891007639,
+        "max_m": 0.16018413522269725,
+        "mean_xz_m": 0.06367396024715108,
+        "mean_y_m": 0.004202895018519188,
+        "final_disp_err_m": 0.058332194959090755
+      },
+      "bone_length": {
+        "max_dev_m": 0.01877606239237342,
+        "mean_dev_m": 0.002083390515971919,
+        "std_per_bone_mean_m": 0.0020652044762575076
+      },
+      "foot_sliding": {
+        "mean_mps": 0.31242840416604206,
+        "p95_mps": 1.7455690415921246,
+        "contact_frames": 596
+      },
+      "ground_penetration": {
+        "min_foot_height_m": -0.012764964252710342,
+        "frames_below_floor_frac": 0.45918367346938777,
+        "mean_depth_when_below_m": 0.003460878133773804
+      },
+      "temporal": {
+        "duration_equal": true,
+        "frames": 196,
+        "ref_frames": 196,
+        "contact_events": {
+          "recall": 0.9310344827586207,
+          "precision": 0.75,
+          "ref_events": 29,
+          "test_events": 36
+        },
+        "direction_events": {
+          "recall": 0.36666666666666664,
+          "precision": 0.4782608695652174,
+          "ref_events": 30,
+          "test_events": 23
+        }
+      },
+      "jerk_mps3": 187.49351471152008,
+      "finite": true,
+      "constraint_vs_target": {
+        "mean": 0.08689243762555611,
+        "p95": 0.15854418230513181,
+        "max": 0.2129509357896233,
+        "n": 176
+      },
+      "root_vs_target": {
+        "mean_m": 0.06444101891007639,
+        "max_m": 0.16018413522269725,
+        "mean_xz_m": 0.06367396024715108,
+        "mean_y_m": 0.004202895018519188,
+        "final_disp_err_m": 0.058332194959090755
+      },
+      "velocity_vs_target": {
+        "err_at_constraints_mps": 0.1787550836364797,
+        "err_all_mps": 0.24551353605632953,
+        "speed_corr_primary": 0.8821174124784366
+      },
+      "constraint_vs_original": {
+        "mean": 0.08689243762555611,
+        "p95": 0.15854418230513181,
+        "max": 0.2129509357896233,
+        "n": 176
+      },
+      "constraint_vs_target_incl_root": {
+        "mean": 0.07536070065582477,
+        "p95": 0.14443403929344256,
+        "max": 0.2129509357896233,
+        "n": 364
+      }
+    },
+    {
+      "mpjpe_vs_original_m": 0.10538190060326413,
+      "end_effector_err_vs_original_m": {
+        "left_wrist": 0.14822547393114763,
+        "right_wrist": 0.17764395658468607,
+        "left_ankle": 0.08568170354827037,
+        "right_ankle": 0.08394839002836926,
+        "left_foot": 0.11741388413785377,
+        "right_foot": 0.08350724766349822
+      },
+      "root_vs_original": {
+        "mean_m": 0.0693880198717981,
+        "max_m": 0.16319740295813231,
+        "mean_xz_m": 0.06870225955514896,
+        "mean_y_m": 0.004462357990595759,
+        "final_disp_err_m": 0.07249854781828527
+      },
+      "bone_length": {
+        "max_dev_m": 0.017165970248947865,
+        "mean_dev_m": 0.001983285392349534,
+        "std_per_bone_mean_m": 0.0020054323827779397
+      },
+      "foot_sliding": {
+        "mean_mps": 0.30313765890335287,
+        "p95_mps": 1.5794631866462012,
+        "contact_frames": 599
+      },
+      "ground_penetration": {
+        "min_foot_height_m": -0.012287449091672897,
+        "frames_below_floor_frac": 0.41836734693877553,
+        "mean_depth_when_below_m": 0.003913202572886537
+      },
+      "temporal": {
+        "duration_equal": true,
+        "frames": 196,
+        "ref_frames": 196,
+        "contact_events": {
+          "recall": 1.0,
+          "precision": 0.90625,
+          "ref_events": 29,
+          "test_events": 32
+        },
+        "direction_events": {
+          "recall": 0.5333333333333333,
+          "precision": 0.53125,
+          "ref_events": 30,
+          "test_events": 32
+        }
+      },
+      "jerk_mps3": 182.89765436621593,
+      "finite": true,
+      "constraint_vs_target": {
+        "mean": 0.09283468840043801,
+        "p95": 0.16585364599417265,
+        "max": 0.22588216661449698,
+        "n": 176
+      },
+      "root_vs_target": {
+        "mean_m": 0.0693880198717981,
+        "max_m": 0.16319740295813231,
+        "mean_xz_m": 0.06870225955514896,
+        "mean_y_m": 0.004462357990595759,
+        "final_disp_err_m": 0.07249854781828527
+      },
+      "velocity_vs_target": {
+        "err_at_constraints_mps": 0.17447357430712934,
+        "err_all_mps": 0.24485386211099128,
+        "speed_corr_primary": 0.8971541279977284
+      },
+      "constraint_vs_original": {
+        "mean": 0.09283468840043801,
+        "p95": 0.16585364599417265,
+        "max": 0.22588216661449698,
+        "n": 176
+      },
+      "constraint_vs_target_incl_root": {
+        "mean": 0.08072877378777144,
+        "p95": 0.1594439109569312,
+        "max": 0.22588216661449698,
+        "n": 364
+      }
+    }
+  ]
+}

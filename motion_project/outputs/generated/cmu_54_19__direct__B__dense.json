@@ -1,0 +1,31 @@
+{
+  "checkpoint": "/root/hpp-condmdi/save/condmdi_random_joints/model000750000.pt",
+  "checkpoint_sha256": "e66f1f8697d0ff6437d35e9931b4a3138045b5b31415fae9180d4f6b5b01f036",
+  "sampler": "GaussianDiffusion.p_sample_loop",
+  "diffusion_steps": 1000,
+  "guidance_param": 0.0,
+  "text": "",
+  "imputate": false,
+  "feature_mode": "pos_rot_vel",
+  "seeds": [
+    10
+  ],
+  "batched_repetitions": 3,
+  "n_frames": 196,
+  "max_frames": 196,
+  "observed_joint_frames": 637,
+  "observed_feature_entries": 6748,
+  "normalisation": "dataset/HumanML3D/Mean_abs_3d.npy, Std_abs_3d.npy (GMD abs-root statistics)",
+  "clip": "cmu_54_19",
+  "projector": "direct",
+  "experiment": "B",
+  "obs_source": "rough",
+  "root_policy": "dense",
+  "torso_orientation_as": "none",
+  "seconds": 39.0,
+  "mask_counts": {
+    "hpp_position_observations": 462,
+    "root_added": 175,
+    "torso_as_joint": 0
+  }
+}

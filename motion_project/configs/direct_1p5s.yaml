@@ -1,0 +1,4 @@
+# Direct input (hpp/direct_input.py): already-robotic motion is used as the rough motion without a rougher.
+name: direct_1p5s
+direct:
+  key_every_s: 1.5       # fewer keys: full body every 1.5 s (30 frames at 20 fps) + last frame

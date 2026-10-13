@@ -13,7 +13,10 @@ from motion_project.evaluation.acceptance import gen_checks
 
 LABEL = {'hpp_v02': 'HPP v0.2-style baseline (0.12 s schedule, Hermite + IK)',
          'hpp_adaptive': 'HPP adaptive keys (extension, Hermite + IK)',
-         'robotic_slerp': 'Robotic slerp (EXPERIMENTAL, not HPP)'}
+         'robotic_slerp': 'Robotic slerp (EXPERIMENTAL, not HPP)',
+         'direct': 'Direct robotic input (CMU mocap, no rougher; full body every 0.5 s)',
+         'direct_1s': 'Direct robotic input (CMU mocap, no rougher; full body every 1 s)',
+         'direct_1p5s': 'Direct robotic input (CMU mocap, no rougher; full body every 1.5 s)'}
 EXP_LABEL = {'A': 'Exp A · real features at HPP entries', 'B': 'Exp B · rough-motion features only'}
 
 

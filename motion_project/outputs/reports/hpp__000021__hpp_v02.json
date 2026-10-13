@@ -1,32 +1,32 @@
 {
-  "mpjpe_vs_original_m": 0.008239981171270495,
+  "mpjpe_vs_original_m": 0.008239980390259426,
   "end_effector_err_vs_original_m": {
-    "left_wrist": 0.0006315985604432272,
-    "right_wrist": 0.0007120046527661014,
-    "left_ankle": 0.0016728763824858806,
-    "right_ankle": 0.001720070338567219,
-    "left_foot": 0.0020654105841207437,
-    "right_foot": 0.002246442144821208
+    "left_wrist": 0.0006315942630591352,
+    "right_wrist": 0.0007120005456578703,
+    "left_ankle": 0.0016728803167731,
+    "right_ankle": 0.0017200748374640161,
+    "left_foot": 0.002065407183458337,
+    "right_foot": 0.002246433938926569
   },
   "root_vs_original": {
-    "mean_m": 0.0005341221076628926,
-    "max_m": 0.005192150690975516,
-    "mean_xz_m": 0.00036057712625094004,
+    "mean_m": 0.0005341227593482889,
+    "max_m": 0.005192161785749738,
+    "mean_xz_m": 0.00036058041162467585,
     "mean_y_m": 0.0003209003793064926,
     "final_disp_err_m": 0.0
   },
   "bone_length": {
-    "max_dev_m": 3.122502256758253e-16,
-    "mean_dev_m": 6.038628259604074e-17,
-    "std_per_bone_mean_m": 4.808253657976113e-16
+    "max_dev_m": 3.3306690738754696e-16,
+    "mean_dev_m": 5.786841846065116e-17,
+    "std_per_bone_mean_m": 4.009577279454306e-16
   },
   "foot_sliding": {
-    "mean_mps": 0.3367147605600866,
-    "p95_mps": 2.810844919613052,
+    "mean_mps": 0.3367146628537705,
+    "p95_mps": 2.8108423574199515,
     "contact_frames": 266
   },
   "ground_penetration": {
-    "min_foot_height_m": 0.0001814329638958681,
+    "min_foot_height_m": 0.00018141232314389244,
     "frames_below_floor_frac": 0.0,
     "mean_depth_when_below_m": 0.0
   },
@@ -47,30 +47,30 @@
       "test_events": 2
     }
   },
-  "jerk_mps3": 31.5152129198325,
+  "jerk_mps3": 31.51520719378671,
   "finite": true,
   "constraint_vs_target": {
-    "mean": 5.105360285290658e-06,
-    "p95": 3.926831835297568e-07,
-    "max": 0.0007293258036378331,
+    "mean": 5.0988377364863094e-06,
+    "p95": 3.712761754783051e-07,
+    "max": 0.0007292915985270062,
     "n": 525
   },
   "root_vs_target": {
-    "mean_m": 0.0005341221076628926,
-    "max_m": 0.005192150690975516,
-    "mean_xz_m": 0.00036057712625094004,
+    "mean_m": 0.0005341227593482889,
+    "max_m": 0.005192161785749738,
+    "mean_xz_m": 0.00036058041162467585,
     "mean_y_m": 0.0003209003793064926,
     "final_disp_err_m": 0.0
   },
   "velocity_vs_target": {
-    "err_at_constraints_mps": 0.04222203158309506,
-    "err_all_mps": 0.04156717750833343,
-    "speed_corr_primary": 0.9982918803282823
+    "err_at_constraints_mps": 0.04222204933594273,
+    "err_all_mps": 0.041567150753275044,
+    "speed_corr_primary": 0.9982918810550129
   },
   "constraint_vs_original": {
-    "mean": 5.105360285290658e-06,
-    "p95": 3.926831835297568e-07,
-    "max": 0.0007293258036378331,
+    "mean": 5.0988377364863094e-06,
+    "p95": 3.712761754783051e-07,
+    "max": 0.0007292915985270062,
     "n": 525
   },
   "keys_per_trajectory": {
@@ -104,13 +104,13 @@
       "final_disp_err_m": 0.0
     },
     "bone_length": {
-      "max_dev_m": 9.003214646863267e-07,
-      "mean_dev_m": 6.723690992806766e-08,
-      "std_per_bone_mean_m": 8.953494660873202e-08
+      "max_dev_m": 9.924653704002084e-07,
+      "mean_dev_m": 6.633940250046535e-08,
+      "std_per_bone_mean_m": 8.80551003050665e-08
     },
     "foot_sliding": {
-      "mean_mps": 0.3373486957657429,
-      "p95_mps": 2.791027886977153,
+      "mean_mps": 0.3373486001899505,
+      "p95_mps": 2.791028142911498,
       "contact_frames": 267
     },
     "ground_penetration": {
@@ -135,7 +135,7 @@
         "test_events": 0
       }
     },
-    "jerk_mps3": 21.2626715439333,
+    "jerk_mps3": 21.262653927424623,
     "finite": true
   },
   "acceptance": {

@@ -8,3 +8,6 @@ seed: 10                      # sample r uses torch seed (seed + r): identical n
 imputate: false               # true pastes observed values into the final output (exact constraints, discontinuities)
 torso_orientation_as: none    # HPP torso-orientation keys are NOT mapped to CondMDI joints (handoff sec. 24 lists
                               # torso as a future constraint); 'head' would observe the head joint at those keys
+sampler: ddpm                 # ddpm (p_sample_loop) or ddim; both on respaced timesteps of the 1000-step schedule
+sampling_steps: 10            # matches 1000 steps on every quality metric incl. pose range and diversity (reports/sampler_benchmark__cuda.json); <8 starts flattening motion
+cpu_graph_fusion: true        # CPU only: TorchScript + oneDNN graph fusion of the UNet (same output, ~1.5x faster)

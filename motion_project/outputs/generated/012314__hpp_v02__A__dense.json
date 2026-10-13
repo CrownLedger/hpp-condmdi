@@ -1,5 +1,5 @@
 {
-  "checkpoint": "/root/diffusion-motion-inbetweening/save/condmdi_random_joints/model000750000.pt",
+  "checkpoint": "/root/hpp-condmdi/save/condmdi_random_joints/model000750000.pt",
   "checkpoint_sha256": "e66f1f8697d0ff6437d35e9931b4a3138045b5b31415fae9180d4f6b5b01f036",
   "sampler": "GaussianDiffusion.p_sample_loop",
   "diffusion_steps": 1000,
@@ -23,7 +23,7 @@
   "obs_source": "original",
   "root_policy": "dense",
   "torso_orientation_as": "none",
-  "seconds": 112.4,
+  "seconds": 239.4,
   "mask_counts": {
     "hpp_position_observations": 504,
     "root_added": 98,

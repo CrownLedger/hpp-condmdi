@@ -1,6 +1,6 @@
 {
   "record": {
-    "checkpoint": "/root/diffusion-motion-inbetweening/save/condmdi_random_joints/model000750000.pt",
+    "checkpoint": "/root/hpp-condmdi/save/condmdi_random_joints/model000750000.pt",
     "checkpoint_sha256": "e66f1f8697d0ff6437d35e9931b4a3138045b5b31415fae9180d4f6b5b01f036",
     "sampler": "GaussianDiffusion.p_sample_loop",
     "diffusion_steps": 1000,
@@ -22,27 +22,27 @@
     "reference": "full body every 5 frames from the original"
   },
   "jerk_mps3": [
-    153.38963871148218,
-    156.23758557813355,
-    154.90701713483313
+    156.0457573744404,
+    158.5068471808419,
+    153.8631287976659
   ],
   "constraint_vs_original": [
     {
-      "mean": 0.06174888302536225,
-      "p95": 0.1307281502480988,
-      "max": 0.2419542435889666,
+      "mean": 0.06173259933585735,
+      "p95": 0.13058136209802393,
+      "max": 0.2423391713069629,
       "n": 792
     },
     {
-      "mean": 0.06288526723610781,
-      "p95": 0.1304899646342611,
-      "max": 0.24267426931906522,
+      "mean": 0.06276053664478126,
+      "p95": 0.1298389758503783,
+      "max": 0.2429993636940156,
       "n": 792
     },
     {
-      "mean": 0.061619807917693024,
-      "p95": 0.13134287434964334,
-      "max": 0.24316135661183644,
+      "mean": 0.06170579668116701,
+      "p95": 0.13117921013080536,
+      "max": 0.24322083072622286,
       "n": 792
     }
   ]

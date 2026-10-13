@@ -1,0 +1,166 @@
+{
+  "mpjpe_vs_original_m": 0.0,
+  "end_effector_err_vs_original_m": {
+    "left_wrist": 0.0,
+    "right_wrist": 0.0,
+    "left_ankle": 0.0,
+    "right_ankle": 0.0,
+    "left_foot": 0.0,
+    "right_foot": 0.0
+  },
+  "root_vs_original": {
+    "mean_m": 0.0,
+    "max_m": 0.0,
+    "mean_xz_m": 0.0,
+    "mean_y_m": 0.0,
+    "final_disp_err_m": 0.0
+  },
+  "bone_length": {
+    "max_dev_m": 9.837689443903397e-07,
+    "mean_dev_m": 5.563666842897411e-08,
+    "std_per_bone_mean_m": 7.569898276895436e-08
+  },
+  "foot_sliding": {
+    "mean_mps": 0.08016415045704993,
+    "p95_mps": 0.33433111427146367,
+    "contact_frames": 285
+  },
+  "ground_penetration": {
+    "min_foot_height_m": 0.0,
+    "frames_below_floor_frac": 0.0,
+    "mean_depth_when_below_m": 0.0
+  },
+  "temporal": {
+    "duration_equal": true,
+    "frames": 196,
+    "ref_frames": 196,
+    "contact_events": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "ref_events": 42,
+      "test_events": 42
+    },
+    "direction_events": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "ref_events": 5,
+      "test_events": 5
+    }
+  },
+  "jerk_mps3": 42.144564003065156,
+  "finite": true,
+  "constraint_vs_target": {
+    "mean": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "n": 176
+  },
+  "root_vs_target": {
+    "mean_m": 0.0,
+    "max_m": 0.0,
+    "mean_xz_m": 0.0,
+    "mean_y_m": 0.0,
+    "final_disp_err_m": 0.0
+  },
+  "velocity_vs_target": {
+    "err_at_constraints_mps": 0.0,
+    "err_all_mps": 0.0,
+    "speed_corr_primary": 1.0
+  },
+  "constraint_vs_original": {
+    "mean": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "n": 176
+  },
+  "keys_per_trajectory": {
+    "root": 8,
+    "left_hip": 8,
+    "right_hip": 8,
+    "spine1": 8,
+    "left_knee": 8,
+    "right_knee": 8,
+    "spine2": 8,
+    "left_ankle": 8,
+    "right_ankle": 8,
+    "spine3": 8,
+    "left_foot": 8,
+    "right_foot": 8,
+    "neck": 8,
+    "left_collar": 8,
+    "right_collar": 8,
+    "head": 8,
+    "left_shoulder": 8,
+    "right_shoulder": 8,
+    "left_elbow": 8,
+    "right_elbow": 8,
+    "left_wrist": 8,
+    "right_wrist": 8
+  },
+  "observed_joint_frames": 176,
+  "total_joint_frames": 4312,
+  "deterministic": true,
+  "original_reference": {
+    "mpjpe_vs_original_m": 0.0,
+    "end_effector_err_vs_original_m": {
+      "left_wrist": 0.0,
+      "right_wrist": 0.0,
+      "left_ankle": 0.0,
+      "right_ankle": 0.0,
+      "left_foot": 0.0,
+      "right_foot": 0.0
+    },
+    "root_vs_original": {
+      "mean_m": 0.0,
+      "max_m": 0.0,
+      "mean_xz_m": 0.0,
+      "mean_y_m": 0.0,
+      "final_disp_err_m": 0.0
+    },
+    "bone_length": {
+      "max_dev_m": 9.837689443903397e-07,
+      "mean_dev_m": 5.563666842897411e-08,
+      "std_per_bone_mean_m": 7.569898276895436e-08
+    },
+    "foot_sliding": {
+      "mean_mps": 0.08016415045704993,
+      "p95_mps": 0.33433111427146367,
+      "contact_frames": 285
+    },
+    "ground_penetration": {
+      "min_foot_height_m": 0.0,
+      "frames_below_floor_frac": 0.0,
+      "mean_depth_when_below_m": 0.0
+    },
+    "temporal": {
+      "duration_equal": true,
+      "frames": 196,
+      "ref_frames": 196,
+      "contact_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 42,
+        "test_events": 42
+      },
+      "direction_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 5,
+        "test_events": 5
+      }
+    },
+    "jerk_mps3": 42.144564003065156,
+    "finite": true
+  },
+  "acceptance": {
+    "H1_duration_equal": true,
+    "H2_connectivity_bone_length": true,
+    "H3_root_trajectory": true,
+    "H4_end_effectors": true,
+    "H5_key_reproduction": true,
+    "H6_contact_timing": true,
+    "H7_deterministic": true,
+    "H8_recognizable": "manual"
+  },
+  "method": "direct input (no rougher)"
+}

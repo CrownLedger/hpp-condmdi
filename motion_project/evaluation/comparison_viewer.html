@@ -58,8 +58,8 @@
   </div>
   <div class="row"><div id="tlwrap"><canvas id="timeline"></canvas></div></div>
   <div class="row">
-    <label><input type="checkbox" id="tKeys" checked> Key trajectories</label>
-    <label><input type="checkbox" id="tTargets" checked> Constraint targets</label>
+    <label><input type="checkbox" id="tKeys"> Key trajectories</label>
+    <label><input type="checkbox" id="tTargets"> Constraint targets</label>
     <label><input type="checkbox" id="tGhost"> Original ghost on outputs</label>
     <label><input type="checkbox" id="tFollow" checked> Camera follows root</label>
     <label><input type="checkbox" id="tPauseKey"> Pause on observed frames</label>
@@ -98,9 +98,15 @@ PANELS.forEach((p, i) => p.layer = i + 1);
 const L = Object.fromEntries(PANELS.map(p => [p.key, p.layer]));
 const $ = id => document.getElementById(id);
 
-const index = await (await fetch('data/index.json')).json();
+async function fetchJSON(u, tries = 5) {        // retry: files can be replaced while results are being exported
+  for (let i = 0; ; i++) {
+    try { return await (await fetch(u + '?v=' + Date.now(), { cache: 'no-store' })).json(); }
+    catch (e) { if (i >= tries) throw e; await new Promise(r => setTimeout(r, 1000)); }
+  }
+}
+const index = await fetchJSON('data/index.json');
 const cache = {};
-async function getItem(i) { const f = index.items[i].file; return cache[f] ??= await (await fetch('data/' + f)).json(); }
+async function getItem(i) { const f = index.items[i].file; return cache[f] ??= await fetchJSON('data/' + f); }
 
 // ---------------- three.js ----------------
 const canvas = $('c3d');
@@ -268,7 +274,7 @@ renderer.setAnimationLoop(() => {
   if (f !== lastF) {
     const obs = D.obs_per_frame[f], cons = C.constrained_per_frame[f];
     if (playing && $('tPauseKey').checked && obs.length && lastF !== -1 && f !== 0) setPlaying(false);
-    S.original.pose(f); S.original.highlight(obs); S.rough.pose(f); S.rough.highlight(obs);
+    S.original.pose(f); S.rough.pose(f);
     S.reps.forEach(s => s.pose(f)); S.ghost.pose(f);
     S.targets.forEach((m, j) => { const on = $('tTargets').checked && cons.includes(j); m.visible = on; if (on) m.position.fromArray(S.targetFrames[f][j]); });
     $('frame').textContent = `Frame ${f + 1} / ${nFrames}`;

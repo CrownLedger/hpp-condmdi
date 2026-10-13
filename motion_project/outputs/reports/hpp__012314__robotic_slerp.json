@@ -1,12 +1,12 @@
 {
-  "mpjpe_vs_original_m": 0.040288155365981376,
+  "mpjpe_vs_original_m": 0.04028815536598138,
   "end_effector_err_vs_original_m": {
-    "left_wrist": 0.0631560371642749,
+    "left_wrist": 0.06315603716427491,
     "right_wrist": 0.054466553862777545,
-    "left_ankle": 0.03760935500434099,
-    "right_ankle": 0.05024202444108282,
-    "left_foot": 0.03664618433349238,
-    "right_foot": 0.05354402365229196
+    "left_ankle": 0.037609355004340976,
+    "right_ankle": 0.05024202444108281,
+    "left_foot": 0.03664618433349237,
+    "right_foot": 0.05354402365229194
   },
   "root_vs_original": {
     "mean_m": 0.03173834197618385,
@@ -16,19 +16,19 @@
     "final_disp_err_m": 0.0
   },
   "bone_length": {
-    "max_dev_m": 4.996003610813204e-16,
-    "mean_dev_m": 9.225424657004277e-17,
-    "std_per_bone_mean_m": 2.7702495053582303e-16
+    "max_dev_m": 5.551115123125783e-16,
+    "mean_dev_m": 9.207348546834435e-17,
+    "std_per_bone_mean_m": 2.660266381683393e-16
   },
   "foot_sliding": {
     "mean_mps": 0.6637312190130861,
-    "p95_mps": 3.2050036818382406,
+    "p95_mps": 3.2050036818382317,
     "contact_frames": 341
   },
   "ground_penetration": {
-    "min_foot_height_m": -0.0765143953447826,
+    "min_foot_height_m": -0.07651439534478263,
     "frames_below_floor_frac": 0.2235294117647059,
-    "mean_depth_when_below_m": 0.025466902898231357
+    "mean_depth_when_below_m": 0.0254669028982313
   },
   "temporal": {
     "duration_equal": true,
@@ -47,12 +47,12 @@
       "test_events": 15
     }
   },
-  "jerk_mps3": 79.29853376862093,
+  "jerk_mps3": 79.29853376862111,
   "finite": true,
   "constraint_vs_target": {
-    "mean": 1.4950207891462343e-07,
-    "p95": 5.151457742116971e-07,
-    "max": 8.277316945281374e-07,
+    "mean": 1.4950207894153464e-07,
+    "p95": 5.151457742016068e-07,
+    "max": 8.277316944808144e-07,
     "n": 140
   },
   "root_vs_target": {
@@ -63,14 +63,14 @@
     "final_disp_err_m": 0.0
   },
   "velocity_vs_target": {
-    "err_at_constraints_mps": 0.6474022387155672,
-    "err_all_mps": 0.3721857819342253,
-    "speed_corr_primary": 0.8792166900157534
+    "err_at_constraints_mps": 0.6474022387155673,
+    "err_all_mps": 0.37218578193422525,
+    "speed_corr_primary": 0.8792166900157533
   },
   "constraint_vs_original": {
-    "mean": 1.4950207891462343e-07,
-    "p95": 5.151457742116971e-07,
-    "max": 8.277316945281374e-07,
+    "mean": 1.4950207894153464e-07,
+    "p95": 5.151457742016068e-07,
+    "max": 8.277316944808144e-07,
     "n": 140
   },
   "keys_per_trajectory": {

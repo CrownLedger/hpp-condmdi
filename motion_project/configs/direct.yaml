@@ -1,0 +1,4 @@
+# Direct input (hpp/direct_input.py): already-robotic motion is used as the rough motion without a rougher.
+name: direct
+direct:
+  key_every_s: 0.5       # CondMDI observes the full body of the input every 0.5 s (10 frames at 20 fps) + last frame

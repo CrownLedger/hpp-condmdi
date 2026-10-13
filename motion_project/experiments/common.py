@@ -15,6 +15,7 @@ import yaml
 from motion_project.hpp.humanml3d_loader import load_humanml3d_motion
 from motion_project.hpp.hpp_projector import hpp_project
 from motion_project.hpp.robotic_slerp import project_robotic_slerp
+from motion_project.hpp.direct_input import project_direct
 from motion_project.realizer import motion_feature_adapter as mfa
 from motion_project.realizer import condmdi_mask_adapter as cma
 from motion_project.evaluation import metrics
@@ -37,14 +38,18 @@ def _json(obj, path):
         if isinstance(o, np.ndarray): return o.tolist()
         if isinstance(o, (np.bool_,)): return bool(o)
         raise TypeError(type(o))
-    with open(path, 'w') as f:
+    tmp = f'{path}.tmp{os.getpid()}'                # atomic: the viewer may read while results are being exported
+    with open(tmp, 'w') as f:
         json.dump(obj, f, indent=2, default=conv)
+    os.replace(tmp, path)
 
 
 def project(positions, fps, projector):
     cfg = load_cfg(projector)
     if projector == 'robotic_slerp':
         return project_robotic_slerp(positions, fps, cfg)
+    if projector.startswith('direct'):
+        return project_direct(positions, fps, cfg)
     return hpp_project(positions, fps, cfg)
 
 

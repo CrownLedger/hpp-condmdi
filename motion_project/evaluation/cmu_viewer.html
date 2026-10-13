@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robotic Mocap × CondMDI</title>
+<style>
+  :root { --bg: #14161b; --panel: #0d0f13; --line: #2b2f38; --text: #e6e6e6; --dim: #8a90a0; --key: #ffd54f; --ok: #66bb6a; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 13px/1.4 system-ui, sans-serif; }
+  body { display: flex; flex-direction: column; overflow: hidden; }
+  #ui { padding: 8px 14px; background: var(--panel); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+  h1 { font-size: 15px; margin: 0; font-weight: 650; }
+  a { color: #8ab4ff; }
+  button, select { background: #252933; color: var(--text); border: 1px solid #3a3f4b; border-radius: 6px; padding: 3px 9px; font: inherit; cursor: pointer; max-width: 100%; }
+  #progress { color: var(--ok); font-variant-numeric: tabular-nums; }
+  #info { color: var(--dim); }
+  #frame { font-variant-numeric: tabular-nums; min-width: 105px; }
+  #timeline { width: 100%; height: 22px; display: block; cursor: pointer; }
+  #stage { position: relative; flex: 1; min-height: 0; }
+  #c3d { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  #panels { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); pointer-events: none; }
+  #panels > div { border: 1px solid var(--line); position: relative; }
+  #panels .lbl { position: absolute; top: 6px; left: 8px; font-weight: 650; background: #000a; padding: 2px 8px; border-radius: 6px; }
+  #panels .sub { position: absolute; bottom: 6px; left: 8px; color: var(--dim); font-size: 12px; background: #000a; padding: 1px 6px; border-radius: 5px; font-variant-numeric: tabular-nums; }
+  #panels .sub:empty { display: none; }
+  [hidden] { display: none !important; }
+  #wait { position: absolute; inset: 0; display: grid; place-items: center; color: var(--dim); font-size: 15px; }
+</style>
+<script type="importmap">{ "imports": { "three": "./three.module.js" } }</script>
+</head>
+<body>
+<div id="ui">
+  <div class="row">
+    <h1>Robotic mocap × CondMDI</h1>
+    <label>Clip <select id="item"></select></label>
+    <label>Keys <select id="keys"></select></label>
+    <span id="progress"></span>
+    <a href="hpp.html">HPP comparison viewer</a>
+  </div>
+  <div class="row"><span id="info"></span></div>
+  <div class="row">
+    <button id="play">Pause</button><button id="prev">◀</button><button id="next">▶</button>
+    <label>Speed <select id="speed"><option>0.25</option><option>0.5</option><option selected>1</option><option>2</option></select></label>
+    <span id="frame"></span>
+    <label><input type="checkbox" id="tGhost" checked> Input ghost on outputs</label>
+    <label><input type="checkbox" id="tTargets"> Key targets</label>
+    <label><input type="checkbox" id="tFollow" checked> Camera follows root</label>
+  </div>
+  <div class="row"><div style="flex:1;min-width:260px"><canvas id="timeline"></canvas></div></div>
+</div>
+<div id="stage">
+  <canvas id="c3d"></canvas>
+  <div id="panels"></div>
+  <div id="wait" hidden>Waiting for the first clip to finish…</div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from './OrbitControls.js';
+
+const CHAINS = [[0,2,5,8,11],[0,1,4,7,10],[0,3,6,9,12,15],[9,14,17,19,21],[9,13,16,18,20]];
+const CHAIN_SHADE = [0.85, 0.85, 1.0, 0.7, 0.7];
+const KEY = 0xffd54f;
+const COLORS = { input: 0xb388ff, reps: [0x4fc3f7, 0xff8a65, 0x81c784] };
+const PANELS = [
+  { label: 'Input · CMU robotic mocap (no rougher)', color: COLORS.input, key: 'input' },
+  { label: 'CondMDI sample 0', color: COLORS.reps[0], key: 'rep0' },
+  { label: 'CondMDI sample 1', color: COLORS.reps[1], key: 'rep1' },
+  { label: 'CondMDI sample 2', color: COLORS.reps[2], key: 'rep2' },
+];
+PANELS.forEach((p, i) => p.layer = i + 1);
+const L = Object.fromEntries(PANELS.map(p => [p.key, p.layer]));
+const $ = id => document.getElementById(id);
+async function fetchJSON(u, tries = 5) {        // retry: files can be replaced while results are being exported
+  for (let i = 0; ; i++) {
+    try { return await (await fetch(u + '?v=' + Date.now(), { cache: 'no-store' })).json(); }
+    catch (e) { if (i >= tries) throw e; await new Promise(r => setTimeout(r, 1000)); }
+  }
+}
+
+// ---------------- three.js ----------------
+const canvas = $('c3d');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setPixelRatio(devicePixelRatio); renderer.shadowMap.enabled = true; renderer.setScissorTest(true);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x14161b);
+const camera = new THREE.PerspectiveCamera(40, 1, 0.05, 100); camera.position.set(0.6, 1.55, 3.4);
+const controls = new OrbitControls(camera, canvas); controls.target.set(0, 0.85, 0); controls.enableDamping = true;
+const hemi = new THREE.HemisphereLight(0xffffff, 0x333344, 1.2);
+const sun = new THREE.DirectionalLight(0xffffff, 1.5); sun.position.set(3, 8, 4); sun.castShadow = true;
+Object.assign(sun.shadow.camera, { left: -8, right: 8, top: 8, bottom: -8 }); sun.shadow.mapSize.set(2048, 2048);
+for (const l of [hemi, sun]) { l.layers.enableAll(); scene.add(l); }
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: 0x1f2229 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+const grid = new THREE.GridHelper(60, 120, 0x3a404c, 0x2a2e37); grid.position.y = 0.001; scene.add(grid);
+const sphereGeo = new THREE.SphereGeometry(1, 16, 12);
+const boneGeo = new THREE.CylinderGeometry(1, 1, 1, 10); boneGeo.translate(0, 0.5, 0);
+const UP = new THREE.Vector3(0, 1, 0), va = new THREE.Vector3(), vb = new THREE.Vector3(), dir = new THREE.Vector3();
+const world = new THREE.Group(); scene.add(world);
+const setLayers = (o, ls) => o.traverse(x => { x.layers.disableAll(); ls.forEach(l => x.layers.enable(l)); });
+
+class Skeleton {
+  constructor(frames, color, layers, { opacity = 1, radius = 0.032 } = {}) {
+    this.frames = frames; this.color = new THREE.Color(color); this.radius = radius; this.group = new THREE.Group();
+    const tr = opacity < 1, mk = c => new THREE.MeshStandardMaterial({ color: c, roughness: 0.45, transparent: tr, opacity, depthWrite: !tr });
+    this.joints = frames[0].map(() => { const m = new THREE.Mesh(sphereGeo, mk(this.color)); m.castShadow = !tr; m.scale.setScalar(radius); this.group.add(m); return m; });
+    this.bones = [];
+    CHAINS.forEach((ch, ci) => { const mat = mk(this.color.clone().multiplyScalar(CHAIN_SHADE[ci]));
+      for (let i = 0; i < ch.length - 1; i++) { const b = new THREE.Mesh(boneGeo, mat); b.castShadow = !tr; this.group.add(b); this.bones.push([b, ch[i], ch[i + 1]]); } });
+    setLayers(this.group, layers); world.add(this.group);
+  }
+  pose(f) {
+    const fr = this.frames[Math.min(f, this.frames.length - 1)], r = this.radius * 0.6;
+    fr.forEach((p, j) => this.joints[j].position.set(p[0], p[1], p[2]));
+    for (const [m, a, b] of this.bones) { va.fromArray(fr[a]); vb.fromArray(fr[b]); dir.subVectors(vb, va);
+      m.position.copy(va); m.scale.set(r, dir.length(), r); m.quaternion.setFromUnitVectors(UP, dir.normalize()); }
+  }
+  highlight(on) { this.joints.forEach(m => { m.material.color.set(on ? KEY : this.color); m.scale.setScalar(this.radius * (on ? 1.5 : 1)); }); }
+}
+
+// ---------------- data ----------------
+let index = { items: [] }, items = [], D = null, C = null, S = null, nFrames = 1, t = 0, playing = true, lastF = -1, keyFrames = new Set();
+const targetMat = new THREE.MeshBasicMaterial({ color: KEY, wireframe: true });
+
+async function refreshIndex() {
+  index = await fetchJSON('data/index.json');
+  const all = index.items.filter(it => it.projector.startsWith('direct'));
+  // key-spacing variants (projectors direct, direct_1s, ...), labelled from the export label
+  const projs = [...new Set(all.map(it => it.projector))];
+  const ks = $('keys'), prevProj = ks.value;
+  if (projs.join() !== [...ks.options].map(o => o.value).join()) {
+    ks.innerHTML = '';
+    projs.forEach(p => ks.add(new Option('every ' + (all.find(it => it.projector === p).label.match(/every ([\d.]+ s)/)?.[1] ?? p), p)));
+    ks.value = projs.includes(prevProj) ? prevProj : projs[projs.length - 1];
+  }
+  const next = all.filter(it => it.projector === ks.value);
+  const done = next.filter(it => it.conditions > 0).length;
+  $('progress').textContent = next.length ? `${done} / ${next.length} clips realized` : 'no CMU clips exported yet';
+  const sel = $('item'), prevClip = D?.clip;
+  const changed = next.length !== items.length || next.some((it, i) => it.conditions !== items[i]?.conditions || it.file !== items[i]?.file);
+  items = next;
+  if (!changed) return;
+  sel.innerHTML = '';
+  items.forEach((it, i) => { const o = new Option(`${it.clip.replace('cmu_', '')}${it.conditions ? '' : ' (pending)'}`, i); o.disabled = !it.conditions; sel.add(o); });
+  const keep = items.findIndex(it => it.clip === prevClip && it.conditions);
+  if (keep >= 0) sel.value = keep;
+  if (!D || D.projector !== ks.value) {
+    const first = keep >= 0 ? keep : items.findIndex(it => it.conditions);
+    if (first >= 0) { sel.value = first; await loadItem(); }
+  }
+  $('wait').hidden = !!D;
+}
+
+function keySpacing() { const f = [...keyFrames].sort((a, b) => a - b); return f.length > 1 ? ((f[1] - f[0]) / D.fps).toFixed(1) : '—'; }
+
+async function loadItem() {
+  const it = items[+$('item').value]; if (!it || !it.conditions) return;
+  D = await fetchJSON('data/' + it.file);
+  C = D.conditions.find(c => c.experiment === 'B') ?? D.conditions[0];
+  keyFrames = new Set(D.observations[0]?.frames ?? []);
+  const m = C.metrics, r = D.hpp.rough_summary, avg = f => m.reduce((s, x) => s + f(x), 0) / m.length;
+  $('info').textContent = `${D.clip.replace('cmu_', 'CMU ')} · ${D.frames} frames @ ${D.fps} fps (${(D.frames / D.fps).toFixed(1)} s) · ` +
+    `CondMDI sees the full body every ${keySpacing()} s (${keyFrames.size} keys) and the root every frame, no text · ` +
+    `jerk ${r.jerk.toFixed(0)} → ${avg(x => x.jerk).toFixed(0)} m/s³ · foot slide ${r.foot_slide.toFixed(2)} → ${avg(x => x.foot_slide).toFixed(2)} m/s`;
+  build(); $('wait').hidden = true;
+}
+
+function build() {
+  world.clear();
+  S = { input: new Skeleton(D.rough, COLORS.input, [L.input]),
+        reps: C.reps.slice(0, 3).map((fr, i) => new Skeleton(fr, COLORS.reps[i], [L[`rep${i}`]])),
+        ghost: new Skeleton(D.rough, COLORS.input, [L.rep0, L.rep1, L.rep2], { opacity: 0.2, radius: 0.026 }),
+        targets: Array.from({ length: 22 }, () => { const s = new THREE.Mesh(sphereGeo, targetMat); s.scale.setScalar(0.05);
+                                                    setLayers(s, [L.rep0, L.rep1, L.rep2]); world.add(s); return s; }) };
+  nFrames = D.frames; t = 0; lastF = -1;
+  PANELS.forEach(p => { let s = '';
+    if (p.key === 'input') s = `jerk ${D.hpp.rough_summary.jerk.toFixed(0)} m/s³ · foot slide ${D.hpp.rough_summary.foot_slide.toFixed(2)} m/s`;
+    else { const x = C.metrics[+p.key[3]]; s = `key err ${(100 * x.constraint_mean).toFixed(1)} cm · MPJPE ${(100 * x.mpjpe).toFixed(1)} cm · jerk ${x.jerk.toFixed(0)} · slide ${x.foot_slide.toFixed(2)}`; }
+    $(`sub-${p.key}`).textContent = s; });
+  drawTimeline();
+}
+
+// ---------------- UI ----------------
+$('panels').innerHTML = PANELS.map(p => `<div><span class="lbl" style="color:#${new THREE.Color(p.color).getHexString()}">${p.label}</span><span class="sub" id="sub-${p.key}"></span></div>`).join('');
+$('item').onchange = loadItem;
+$('keys').onchange = () => { items = []; refreshIndex(); };
+const setPlaying = p => { playing = p; $('play').textContent = p ? 'Pause' : 'Play'; };
+$('play').onclick = () => setPlaying(!playing);
+const step = d => { setPlaying(false); t = (Math.floor(t) + d + nFrames) % nFrames; };
+$('prev').onclick = () => step(-1); $('next').onclick = () => step(1);
+addEventListener('keydown', e => { if (e.target.tagName === 'SELECT') return;
+  if (e.code === 'Space') { e.preventDefault(); $('play').onclick(); } if (e.code === 'ArrowLeft') step(-1); if (e.code === 'ArrowRight') step(1); });
+$('tGhost').onchange = $('tTargets').onchange = () => lastF = -1;
+
+const tl = $('timeline');
+function drawTimeline() {
+  const w = tl.clientWidth, h = tl.clientHeight, dpr = devicePixelRatio;
+  tl.width = w * dpr; tl.height = h * dpr;
+  const ctx = tl.getContext('2d'); ctx.scale(dpr, dpr);
+  ctx.fillStyle = '#1e222a'; ctx.fillRect(0, 0, w, h);
+  const X = f => (f + 0.5) / nFrames * w;
+  ctx.fillStyle = '#ffd54f'; for (const f of keyFrames) ctx.fillRect(X(f) - 1, 3, 2, h - 6);
+  ctx.fillStyle = '#ffffffcc'; ctx.fillRect(X(Math.floor(t)) - 0.75, 0, 1.5, h);
+}
+let drag = false;
+const seek = e => { const r = tl.getBoundingClientRect(); t = Math.min(nFrames - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * nFrames))); };
+tl.onpointerdown = e => { drag = true; setPlaying(false); seek(e); tl.setPointerCapture(e.pointerId); };
+tl.onpointermove = e => drag && seek(e); tl.onpointerup = () => drag = false;
+
+function resize() { const r = $('stage').getBoundingClientRect(); renderer.setSize(r.width, r.height, false); if (D) drawTimeline(); }
+addEventListener('resize', resize);
+resize();
+await refreshIndex();
+if (!D) $('wait').hidden = false;
+setInterval(() => refreshIndex().catch(e => console.warn('index refresh failed', e)), 10000);
+
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = clock.getDelta();
+  if (!D) return;
+  if (playing) t = (t + dt * D.fps * +$('speed').value) % nFrames;
+  const f = Math.floor(t);
+  if (f !== lastF) {
+    const isKey = keyFrames.has(f);
+    S.input.pose(f);
+    S.reps.forEach(s => s.pose(f)); S.ghost.pose(f); S.ghost.group.visible = $('tGhost').checked;
+    S.targets.forEach((m, j) => { const on = $('tTargets').checked && isKey; m.visible = on; if (on) m.position.fromArray(D.rough[f][j]); });
+    $('frame').textContent = `Frame ${f + 1} / ${nFrames}${isKey ? ' · key' : ''}`;
+    lastF = f; drawTimeline();
+  }
+  if ($('tFollow').checked) { const r = D.rough[f][0], d = new THREE.Vector3(r[0], 0.85, r[2]).sub(controls.target); controls.target.add(d); camera.position.add(d); }
+  controls.update();
+  const stage = canvas.getBoundingClientRect();
+  [...$('panels').children].forEach((div, i) => {
+    const r = div.getBoundingClientRect(), x = r.left - stage.left, y = stage.bottom - r.bottom;
+    renderer.setViewport(x, y, r.width, r.height); renderer.setScissor(x, y, r.width, r.height);
+    camera.aspect = r.width / r.height; camera.updateProjectionMatrix();
+    camera.layers.set(0); camera.layers.enable(PANELS[i].layer); renderer.render(scene, camera);
+  });
+});
+</script>
+</body>
+</html>
