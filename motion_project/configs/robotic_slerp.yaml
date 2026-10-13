@@ -1,0 +1,5 @@
+# EXPERIMENTAL, NOT HPP: deliberately robotic pose-to-pose rough motion (user request). Not part of the baseline.
+name: robotic_slerp
+robotic_slerp:
+  eps_pos_m: 0.15             # max joint error tolerated between key poses
+  min_key_interval_s: 0.30

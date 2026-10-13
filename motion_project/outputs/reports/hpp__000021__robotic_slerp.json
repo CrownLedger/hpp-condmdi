@@ -1,0 +1,152 @@
+{
+  "mpjpe_vs_original_m": 0.02354556860640832,
+  "end_effector_err_vs_original_m": {
+    "left_wrist": 0.02296260839711022,
+    "right_wrist": 0.02304416139664612,
+    "left_ankle": 0.043450213153182184,
+    "right_ankle": 0.03378737429935891,
+    "left_foot": 0.0459391141455486,
+    "right_foot": 0.04039892486477198
+  },
+  "root_vs_original": {
+    "mean_m": 0.017071688651645645,
+    "max_m": 0.049400032201343244,
+    "mean_xz_m": 0.015138450868174091,
+    "mean_y_m": 0.0057930608756937355,
+    "final_disp_err_m": 0.0
+  },
+  "bone_length": {
+    "max_dev_m": 6.661338147750939e-16,
+    "mean_dev_m": 9.176728721599895e-17,
+    "std_per_bone_mean_m": 5.003448660396298e-16
+  },
+  "foot_sliding": {
+    "mean_mps": 0.5680091550083805,
+    "p95_mps": 2.5434170035918977,
+    "contact_frames": 314
+  },
+  "ground_penetration": {
+    "min_foot_height_m": -0.04271284491662983,
+    "frames_below_floor_frac": 0.22905027932960895,
+    "mean_depth_when_below_m": 0.01399721909070735
+  },
+  "temporal": {
+    "duration_equal": true,
+    "frames": 179,
+    "ref_frames": 179,
+    "contact_events": {
+      "recall": 0.9166666666666666,
+      "precision": 0.9166666666666666,
+      "ref_events": 36,
+      "test_events": 36
+    },
+    "direction_events": {
+      "recall": 1.0,
+      "precision": 0.0,
+      "ref_events": 0,
+      "test_events": 1
+    }
+  },
+  "jerk_mps3": 47.403985513835586,
+  "finite": true,
+  "constraint_vs_target": {
+    "mean": 1.1019661582341964e-07,
+    "p95": 3.199570484386261e-07,
+    "max": 8.646627036372829e-07,
+    "n": 140
+  },
+  "root_vs_target": {
+    "mean_m": 0.017071688651645645,
+    "max_m": 0.049400032201343244,
+    "mean_xz_m": 0.015138450868174091,
+    "mean_y_m": 0.0057930608756937355,
+    "final_disp_err_m": 0.0
+  },
+  "velocity_vs_target": {
+    "err_at_constraints_mps": 0.41326204804748395,
+    "err_all_mps": 0.17172848431814747,
+    "speed_corr_primary": 0.9390732416227455
+  },
+  "constraint_vs_original": {
+    "mean": 1.1019661582341964e-07,
+    "p95": 3.199570484386261e-07,
+    "max": 8.646627036372829e-07,
+    "n": 140
+  },
+  "keys_per_trajectory": {
+    "root": 20,
+    "left_hand": 20,
+    "right_hand": 20,
+    "left_ankle": 20,
+    "right_ankle": 20,
+    "left_foot": 20,
+    "right_foot": 20,
+    "torso_orientation": 20
+  },
+  "observed_joint_frames": 140,
+  "total_joint_frames": 3938,
+  "deterministic": true,
+  "original_reference": {
+    "mpjpe_vs_original_m": 0.0,
+    "end_effector_err_vs_original_m": {
+      "left_wrist": 0.0,
+      "right_wrist": 0.0,
+      "left_ankle": 0.0,
+      "right_ankle": 0.0,
+      "left_foot": 0.0,
+      "right_foot": 0.0
+    },
+    "root_vs_original": {
+      "mean_m": 0.0,
+      "max_m": 0.0,
+      "mean_xz_m": 0.0,
+      "mean_y_m": 0.0,
+      "final_disp_err_m": 0.0
+    },
+    "bone_length": {
+      "max_dev_m": 9.003214646863267e-07,
+      "mean_dev_m": 6.723690992806766e-08,
+      "std_per_bone_mean_m": 8.953494660873202e-08
+    },
+    "foot_sliding": {
+      "mean_mps": 0.3373486957657429,
+      "p95_mps": 2.791027886977153,
+      "contact_frames": 267
+    },
+    "ground_penetration": {
+      "min_foot_height_m": 0.0,
+      "frames_below_floor_frac": 0.0,
+      "mean_depth_when_below_m": 0.0
+    },
+    "temporal": {
+      "duration_equal": true,
+      "frames": 179,
+      "ref_frames": 179,
+      "contact_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 36,
+        "test_events": 36
+      },
+      "direction_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 0,
+        "test_events": 0
+      }
+    },
+    "jerk_mps3": 21.2626715439333,
+    "finite": true
+  },
+  "acceptance": {
+    "H1_duration_equal": true,
+    "H2_connectivity_bone_length": true,
+    "H3_root_trajectory": true,
+    "H4_end_effectors": true,
+    "H5_key_reproduction": true,
+    "H6_contact_timing": true,
+    "H7_deterministic": true,
+    "H8_recognizable": "manual"
+  },
+  "method": "robotic_slerp (experimental)"
+}

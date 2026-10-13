@@ -1,0 +1,152 @@
+{
+  "mpjpe_vs_original_m": 0.027477164500595706,
+  "end_effector_err_vs_original_m": {
+    "left_wrist": 0.008206080877458718,
+    "right_wrist": 0.00727086450676019,
+    "left_ankle": 0.004555415185521174,
+    "right_ankle": 0.004234860473437295,
+    "left_foot": 0.004348974039929099,
+    "right_foot": 0.005257597428196853
+  },
+  "root_vs_original": {
+    "mean_m": 0.0029063862841190898,
+    "max_m": 0.02958602434306789,
+    "mean_xz_m": 0.0016229847286028311,
+    "mean_y_m": 0.002120728486959334,
+    "final_disp_err_m": 0.0
+  },
+  "bone_length": {
+    "max_dev_m": 3.3306690738754696e-16,
+    "mean_dev_m": 5.556946126406377e-17,
+    "std_per_bone_mean_m": 2.635049874661675e-16
+  },
+  "foot_sliding": {
+    "mean_mps": 0.3205087231355685,
+    "p95_mps": 2.505625348594068,
+    "contact_frames": 283
+  },
+  "ground_penetration": {
+    "min_foot_height_m": 0.001484131689742381,
+    "frames_below_floor_frac": 0.0,
+    "mean_depth_when_below_m": 0.0
+  },
+  "temporal": {
+    "duration_equal": true,
+    "frames": 170,
+    "ref_frames": 170,
+    "contact_events": {
+      "recall": 0.9473684210526315,
+      "precision": 1.0,
+      "ref_events": 38,
+      "test_events": 36
+    },
+    "direction_events": {
+      "recall": 0.85,
+      "precision": 0.9444444444444444,
+      "ref_events": 40,
+      "test_events": 36
+    }
+  },
+  "jerk_mps3": 100.19142738147872,
+  "finite": true,
+  "constraint_vs_target": {
+    "mean": 0.0008129993395087004,
+    "p95": 3.502566718095048e-07,
+    "max": 0.0784248220486443,
+    "n": 504
+  },
+  "root_vs_target": {
+    "mean_m": 0.0029063862841190898,
+    "max_m": 0.02958602434306789,
+    "mean_xz_m": 0.0016229847286028311,
+    "mean_y_m": 0.002120728486959334,
+    "final_disp_err_m": 0.0
+  },
+  "velocity_vs_target": {
+    "err_at_constraints_mps": 0.15316367703446665,
+    "err_all_mps": 0.1623065561104082,
+    "speed_corr_primary": 0.9844840045582619
+  },
+  "constraint_vs_original": {
+    "mean": 0.0008129993395087004,
+    "p95": 3.502566718095048e-07,
+    "max": 0.0784248220486443,
+    "n": 504
+  },
+  "keys_per_trajectory": {
+    "root": 72,
+    "left_hand": 72,
+    "right_hand": 72,
+    "left_ankle": 72,
+    "right_ankle": 72,
+    "left_foot": 72,
+    "right_foot": 72,
+    "torso_orientation": 72
+  },
+  "observed_joint_frames": 504,
+  "total_joint_frames": 3740,
+  "deterministic": true,
+  "original_reference": {
+    "mpjpe_vs_original_m": 0.0,
+    "end_effector_err_vs_original_m": {
+      "left_wrist": 0.0,
+      "right_wrist": 0.0,
+      "left_ankle": 0.0,
+      "right_ankle": 0.0,
+      "left_foot": 0.0,
+      "right_foot": 0.0
+    },
+    "root_vs_original": {
+      "mean_m": 0.0,
+      "max_m": 0.0,
+      "mean_xz_m": 0.0,
+      "mean_y_m": 0.0,
+      "final_disp_err_m": 0.0
+    },
+    "bone_length": {
+      "max_dev_m": 1.2316726072381101e-06,
+      "mean_dev_m": 7.6724075841218e-08,
+      "std_per_bone_mean_m": 1.1048354256029306e-07
+    },
+    "foot_sliding": {
+      "mean_mps": 0.3012431001215557,
+      "p95_mps": 2.7432253725528692,
+      "contact_frames": 283
+    },
+    "ground_penetration": {
+      "min_foot_height_m": 0.0,
+      "frames_below_floor_frac": 0.0,
+      "mean_depth_when_below_m": 0.0
+    },
+    "temporal": {
+      "duration_equal": true,
+      "frames": 170,
+      "ref_frames": 170,
+      "contact_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 38,
+        "test_events": 38
+      },
+      "direction_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 40,
+        "test_events": 40
+      }
+    },
+    "jerk_mps3": 113.21443123405571,
+    "finite": true
+  },
+  "acceptance": {
+    "H1_duration_equal": true,
+    "H2_connectivity_bone_length": true,
+    "H3_root_trajectory": true,
+    "H4_end_effectors": true,
+    "H5_key_reproduction": true,
+    "H6_contact_timing": true,
+    "H7_deterministic": true,
+    "H8_recognizable": "manual"
+  },
+  "method": "hpp_v02_style:v02_schedule"
+}

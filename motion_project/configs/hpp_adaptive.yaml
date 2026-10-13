@@ -1,0 +1,21 @@
+# EXTENSION (not verified v0.2): event + error driven perceptual key selection, same decoder as the baseline.
+name: hpp_adaptive
+selection:
+  mode: adaptive
+  adaptive:
+    min_key_interval_s: 0.12   # v0.2 interval reused as the minimum key spacing
+    eps_m: {root: 0.03, left_hand: 0.05, right_hand: 0.05, left_ankle: 0.03, right_ankle: 0.03, left_foot: 0.03, right_foot: 0.03}
+    torso_eps_deg: 8.0
+    pause_speed: 0.10          # m/s
+    min_pause_s: 0.25
+    min_contact_s: 0.10
+    contact_disp_sq: 0.002     # HumanML3D contact rule
+    turn_min_speed: 0.20       # m/s
+    turn_angle_deg: 45.0
+    turn_window_s: 0.10
+    extrema_prominence: 2.0    # x eps
+decoder:
+  interpolation: cubic_hermite_fritsch_carlson
+  poles:
+    elbow: {forward: -1.0, up: -0.5, outward: 0.3}
+    knee: {forward: 1.0, up: 0.0, outward: 0.1}

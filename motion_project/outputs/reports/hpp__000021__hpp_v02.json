@@ -1,0 +1,152 @@
+{
+  "mpjpe_vs_original_m": 0.008239981171270495,
+  "end_effector_err_vs_original_m": {
+    "left_wrist": 0.0006315985604432272,
+    "right_wrist": 0.0007120046527661014,
+    "left_ankle": 0.0016728763824858806,
+    "right_ankle": 0.001720070338567219,
+    "left_foot": 0.0020654105841207437,
+    "right_foot": 0.002246442144821208
+  },
+  "root_vs_original": {
+    "mean_m": 0.0005341221076628926,
+    "max_m": 0.005192150690975516,
+    "mean_xz_m": 0.00036057712625094004,
+    "mean_y_m": 0.0003209003793064926,
+    "final_disp_err_m": 0.0
+  },
+  "bone_length": {
+    "max_dev_m": 3.122502256758253e-16,
+    "mean_dev_m": 6.038628259604074e-17,
+    "std_per_bone_mean_m": 4.808253657976113e-16
+  },
+  "foot_sliding": {
+    "mean_mps": 0.3367147605600866,
+    "p95_mps": 2.810844919613052,
+    "contact_frames": 266
+  },
+  "ground_penetration": {
+    "min_foot_height_m": 0.0001814329638958681,
+    "frames_below_floor_frac": 0.0,
+    "mean_depth_when_below_m": 0.0
+  },
+  "temporal": {
+    "duration_equal": true,
+    "frames": 179,
+    "ref_frames": 179,
+    "contact_events": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "ref_events": 36,
+      "test_events": 36
+    },
+    "direction_events": {
+      "recall": 1.0,
+      "precision": 0.0,
+      "ref_events": 0,
+      "test_events": 2
+    }
+  },
+  "jerk_mps3": 31.5152129198325,
+  "finite": true,
+  "constraint_vs_target": {
+    "mean": 5.105360285290658e-06,
+    "p95": 3.926831835297568e-07,
+    "max": 0.0007293258036378331,
+    "n": 525
+  },
+  "root_vs_target": {
+    "mean_m": 0.0005341221076628926,
+    "max_m": 0.005192150690975516,
+    "mean_xz_m": 0.00036057712625094004,
+    "mean_y_m": 0.0003209003793064926,
+    "final_disp_err_m": 0.0
+  },
+  "velocity_vs_target": {
+    "err_at_constraints_mps": 0.04222203158309506,
+    "err_all_mps": 0.04156717750833343,
+    "speed_corr_primary": 0.9982918803282823
+  },
+  "constraint_vs_original": {
+    "mean": 5.105360285290658e-06,
+    "p95": 3.926831835297568e-07,
+    "max": 0.0007293258036378331,
+    "n": 525
+  },
+  "keys_per_trajectory": {
+    "root": 75,
+    "left_hand": 75,
+    "right_hand": 75,
+    "left_ankle": 75,
+    "right_ankle": 75,
+    "left_foot": 75,
+    "right_foot": 75,
+    "torso_orientation": 75
+  },
+  "observed_joint_frames": 525,
+  "total_joint_frames": 3938,
+  "deterministic": true,
+  "original_reference": {
+    "mpjpe_vs_original_m": 0.0,
+    "end_effector_err_vs_original_m": {
+      "left_wrist": 0.0,
+      "right_wrist": 0.0,
+      "left_ankle": 0.0,
+      "right_ankle": 0.0,
+      "left_foot": 0.0,
+      "right_foot": 0.0
+    },
+    "root_vs_original": {
+      "mean_m": 0.0,
+      "max_m": 0.0,
+      "mean_xz_m": 0.0,
+      "mean_y_m": 0.0,
+      "final_disp_err_m": 0.0
+    },
+    "bone_length": {
+      "max_dev_m": 9.003214646863267e-07,
+      "mean_dev_m": 6.723690992806766e-08,
+      "std_per_bone_mean_m": 8.953494660873202e-08
+    },
+    "foot_sliding": {
+      "mean_mps": 0.3373486957657429,
+      "p95_mps": 2.791027886977153,
+      "contact_frames": 267
+    },
+    "ground_penetration": {
+      "min_foot_height_m": 0.0,
+      "frames_below_floor_frac": 0.0,
+      "mean_depth_when_below_m": 0.0
+    },
+    "temporal": {
+      "duration_equal": true,
+      "frames": 179,
+      "ref_frames": 179,
+      "contact_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 36,
+        "test_events": 36
+      },
+      "direction_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 0,
+        "test_events": 0
+      }
+    },
+    "jerk_mps3": 21.2626715439333,
+    "finite": true
+  },
+  "acceptance": {
+    "H1_duration_equal": true,
+    "H2_connectivity_bone_length": true,
+    "H3_root_trajectory": true,
+    "H4_end_effectors": true,
+    "H5_key_reproduction": true,
+    "H6_contact_timing": true,
+    "H7_deterministic": true,
+    "H8_recognizable": "manual"
+  },
+  "method": "hpp_v02_style:v02_schedule"
+}

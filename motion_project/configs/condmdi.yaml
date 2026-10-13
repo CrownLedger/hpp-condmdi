@@ -1,0 +1,10 @@
+# Pretrained CondMDI realizer (no fine-tuning).
+model_path: ./save/condmdi_random_joints/model000750000.pt   # trained with keyframe_selection_scheme=random_joints
+max_frames: 196               # model / dataset limit; longer inputs raise an error (no silent truncation)
+feature_mode: pos_rot_vel     # per observed joint: ric position + 6D rotation + velocity (+ foot contact if foot joint)
+text: ''                      # '' = no text conditioning (guidance_param 0, as --no_text)
+num_repetitions: 3
+seed: 10                      # sample r uses torch seed (seed + r): identical noise across conditions
+imputate: false               # true pastes observed values into the final output (exact constraints, discontinuities)
+torso_orientation_as: none    # HPP torso-orientation keys are NOT mapped to CondMDI joints (handoff sec. 24 lists
+                              # torso as a future constraint); 'head' would observe the head joint at those keys

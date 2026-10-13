@@ -1,0 +1,152 @@
+{
+  "mpjpe_vs_original_m": 0.03150672469999727,
+  "end_effector_err_vs_original_m": {
+    "left_wrist": 0.01522419873658704,
+    "right_wrist": 0.014991670381692756,
+    "left_ankle": 0.007521948701558529,
+    "right_ankle": 0.007900959745513402,
+    "left_foot": 0.007081597526000692,
+    "right_foot": 0.007006325375802917
+  },
+  "root_vs_original": {
+    "mean_m": 0.008309115495554225,
+    "max_m": 0.02854957443179286,
+    "mean_xz_m": 0.006337064506160089,
+    "mean_y_m": 0.004122482544241147,
+    "final_disp_err_m": 0.0
+  },
+  "bone_length": {
+    "max_dev_m": 3.3306690738754696e-16,
+    "mean_dev_m": 5.579492672424675e-17,
+    "std_per_bone_mean_m": 2.624133482672018e-16
+  },
+  "foot_sliding": {
+    "mean_mps": 0.28946075020214523,
+    "p95_mps": 2.474589634754488,
+    "contact_frames": 285
+  },
+  "ground_penetration": {
+    "min_foot_height_m": 0.0033017653453347173,
+    "frames_below_floor_frac": 0.0,
+    "mean_depth_when_below_m": 0.0
+  },
+  "temporal": {
+    "duration_equal": true,
+    "frames": 170,
+    "ref_frames": 170,
+    "contact_events": {
+      "recall": 0.9473684210526315,
+      "precision": 1.0,
+      "ref_events": 38,
+      "test_events": 36
+    },
+    "direction_events": {
+      "recall": 0.825,
+      "precision": 0.9411764705882353,
+      "ref_events": 40,
+      "test_events": 34
+    }
+  },
+  "jerk_mps3": 88.00560100892883,
+  "finite": true,
+  "constraint_vs_target": {
+    "mean": 0.002653615997873277,
+    "p95": 0.01658022544334595,
+    "max": 0.06833535769194245,
+    "n": 254
+  },
+  "root_vs_target": {
+    "mean_m": 0.008309115495554225,
+    "max_m": 0.02854957443179286,
+    "mean_xz_m": 0.006337064506160089,
+    "mean_y_m": 0.004122482544241147,
+    "final_disp_err_m": 0.0
+  },
+  "velocity_vs_target": {
+    "err_at_constraints_mps": 0.23781532243439538,
+    "err_all_mps": 0.20258681802753215,
+    "speed_corr_primary": 0.9868922829059756
+  },
+  "constraint_vs_original": {
+    "mean": 0.002653615997873277,
+    "p95": 0.01658022544334595,
+    "max": 0.06833535769194245,
+    "n": 254
+  },
+  "keys_per_trajectory": {
+    "root": 30,
+    "left_hand": 36,
+    "right_hand": 36,
+    "left_ankle": 40,
+    "right_ankle": 36,
+    "left_foot": 39,
+    "right_foot": 37,
+    "torso_orientation": 24
+  },
+  "observed_joint_frames": 254,
+  "total_joint_frames": 3740,
+  "deterministic": true,
+  "original_reference": {
+    "mpjpe_vs_original_m": 0.0,
+    "end_effector_err_vs_original_m": {
+      "left_wrist": 0.0,
+      "right_wrist": 0.0,
+      "left_ankle": 0.0,
+      "right_ankle": 0.0,
+      "left_foot": 0.0,
+      "right_foot": 0.0
+    },
+    "root_vs_original": {
+      "mean_m": 0.0,
+      "max_m": 0.0,
+      "mean_xz_m": 0.0,
+      "mean_y_m": 0.0,
+      "final_disp_err_m": 0.0
+    },
+    "bone_length": {
+      "max_dev_m": 1.2316726072381101e-06,
+      "mean_dev_m": 7.6724075841218e-08,
+      "std_per_bone_mean_m": 1.1048354256029306e-07
+    },
+    "foot_sliding": {
+      "mean_mps": 0.3012431001215557,
+      "p95_mps": 2.7432253725528692,
+      "contact_frames": 283
+    },
+    "ground_penetration": {
+      "min_foot_height_m": 0.0,
+      "frames_below_floor_frac": 0.0,
+      "mean_depth_when_below_m": 0.0
+    },
+    "temporal": {
+      "duration_equal": true,
+      "frames": 170,
+      "ref_frames": 170,
+      "contact_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 38,
+        "test_events": 38
+      },
+      "direction_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 40,
+        "test_events": 40
+      }
+    },
+    "jerk_mps3": 113.21443123405571,
+    "finite": true
+  },
+  "acceptance": {
+    "H1_duration_equal": true,
+    "H2_connectivity_bone_length": true,
+    "H3_root_trajectory": true,
+    "H4_end_effectors": true,
+    "H5_key_reproduction": true,
+    "H6_contact_timing": true,
+    "H7_deterministic": true,
+    "H8_recognizable": "manual"
+  },
+  "method": "hpp_v02_style:adaptive"
+}

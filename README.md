@@ -1,3 +1,10 @@
+> **This repository = CondMDI + `motion_project/`** — an integration layer that tests whether a deterministic,
+> simplified motion (HPP, reconstructed v0.2-style) can be realized as natural motion by pretrained CondMDI.
+> See [`motion_project/README.md`](motion_project/README.md) for how to run it and
+> [`motion_project/docs/evaluation_report.md`](motion_project/docs/evaluation_report.md) for results.
+> Checkpoints, datasets and the Python environment are not included (see `motion_project/docs/environment_report.md`).
+> The original CondMDI README follows.
+
 # Flexible Motion In-betweening with Diffusion Models
 
 [![arXiv](https://img.shields.io/badge/arXiv-<2305.12577>-<COLOR>.svg)](https://arxiv.org/abs/2405.11126)

@@ -1,0 +1,26 @@
+# Acceptance tolerances, fixed BEFORE the final evaluation run (handoff sec. 34).
+# Disclosure: pilot runs on clip 012314 were seen earlier; thresholds follow project requirements, not pilot results.
+event_tolerance_s: 0.10          # contact / direction events must match within +-0.10 s (2 frames @ 20 fps)
+floor_height_m: 0.0              # HumanML3D puts the lowest foot point of every clip at y = 0
+contact_height_m: 0.05           # foot joint counts as on the ground below this height (for sliding)
+hpp:
+  H1_duration_equal: true
+  H2_bone_length_max_dev_m: 0.001
+  H3_root_mean_err_m: 0.05
+  H3_root_final_disp_err_m: 0.05
+  H4_end_effector_mean_err_m: 0.05      # each of wrists, ankles, feet
+  H5_key_reproduction_mean_err_m: 0.01  # rough vs original at the observed position keys
+  H6_contact_recall_min: 0.80
+  H7_deterministic: true
+  H8_recognizable: manual
+condmdi:
+  C1_bone_length_max_dev_m: 0.02         # CondMDI decodes positions (not rotations): small length drift allowed
+  C2_constraint_mean_err_m: 0.05          # vs the values CondMDI was conditioned on, at HPP-observed joint-frames
+  C2_constraint_p95_err_m: 0.15
+  C3_root_mean_err_m: 0.10                # vs the conditioning target, all frames
+  C4_foot_slide_max_ratio: 1.5            # x original's foot sliding
+  C5_min_foot_height_m: -0.03             # ground penetration
+  C6_contact_recall_min: 0.80             # vs original
+  C7_jerk_max_ratio: 1.10                 # x the reference CondMDI run (model's own baseline jitter on this clip)
+  C8_reproducible_max_diff_m: 0.0001      # same seed, same inputs
+  C9_perceptually_plausible: manual

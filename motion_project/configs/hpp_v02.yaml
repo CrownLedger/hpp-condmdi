@@ -1,0 +1,11 @@
+# HPP baseline: reconstructed v0.2-style (original v0.2 source not available).
+name: hpp_v02
+selection:
+  mode: v02_schedule
+  interval_s: 0.12          # v0.2 reference value for sparse hand/foot trajectories (time-based; 2.4 frames @ 20 fps)
+  # ASSUMPTION: the same schedule is applied to root and torso orientation (v0.2 behaviour unknown).
+decoder:
+  interpolation: cubic_hermite_fritsch_carlson
+  poles:                    # canonical bend directions in the body frame (deterministic choice)
+    elbow: {forward: -1.0, up: -0.5, outward: 0.3}   # elbows back / down / slightly out
+    knee: {forward: 1.0, up: 0.0, outward: 0.1}      # knees forward

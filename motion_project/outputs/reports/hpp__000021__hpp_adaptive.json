@@ -1,0 +1,152 @@
+{
+  "mpjpe_vs_original_m": 0.016830967323168484,
+  "end_effector_err_vs_original_m": {
+    "left_wrist": 0.016258582182904095,
+    "right_wrist": 0.011809017825648678,
+    "left_ankle": 0.0056417265789098555,
+    "right_ankle": 0.005178857263130478,
+    "left_foot": 0.006359853831002814,
+    "right_foot": 0.0054669512258866525
+  },
+  "root_vs_original": {
+    "mean_m": 0.00733126700505845,
+    "max_m": 0.025519290689047496,
+    "mean_xz_m": 0.005122076526043916,
+    "mean_y_m": 0.004290877740060789,
+    "final_disp_err_m": 0.0
+  },
+  "bone_length": {
+    "max_dev_m": 3.0531133177191805e-16,
+    "mean_dev_m": 6.030136928942204e-17,
+    "std_per_bone_mean_m": 4.847963681378817e-16
+  },
+  "foot_sliding": {
+    "mean_mps": 0.2940330567387874,
+    "p95_mps": 2.682734832941893,
+    "contact_frames": 256
+  },
+  "ground_penetration": {
+    "min_foot_height_m": -0.0006800081948771589,
+    "frames_below_floor_frac": 0.027932960893854747,
+    "mean_depth_when_below_m": 0.00045117052957416857
+  },
+  "temporal": {
+    "duration_equal": true,
+    "frames": 179,
+    "ref_frames": 179,
+    "contact_events": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "ref_events": 36,
+      "test_events": 36
+    },
+    "direction_events": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "ref_events": 0,
+      "test_events": 0
+    }
+  },
+  "jerk_mps3": 28.71657112813995,
+  "finite": true,
+  "constraint_vs_target": {
+    "mean": 0.0008468365594206433,
+    "p95": 0.006161592556743093,
+    "max": 0.01699016076599209,
+    "n": 205
+  },
+  "root_vs_target": {
+    "mean_m": 0.00733126700505845,
+    "max_m": 0.025519290689047496,
+    "mean_xz_m": 0.005122076526043916,
+    "mean_y_m": 0.004290877740060789,
+    "final_disp_err_m": 0.0
+  },
+  "velocity_vs_target": {
+    "err_at_constraints_mps": 0.12172889955781808,
+    "err_all_mps": 0.1014669595689242,
+    "speed_corr_primary": 0.9935316558850323
+  },
+  "constraint_vs_original": {
+    "mean": 0.0008468365594206433,
+    "p95": 0.006161592556743093,
+    "max": 0.01699016076599209,
+    "n": 205
+  },
+  "keys_per_trajectory": {
+    "root": 25,
+    "left_hand": 18,
+    "right_hand": 20,
+    "left_ankle": 33,
+    "right_ankle": 36,
+    "left_foot": 37,
+    "right_foot": 36,
+    "torso_orientation": 12
+  },
+  "observed_joint_frames": 205,
+  "total_joint_frames": 3938,
+  "deterministic": true,
+  "original_reference": {
+    "mpjpe_vs_original_m": 0.0,
+    "end_effector_err_vs_original_m": {
+      "left_wrist": 0.0,
+      "right_wrist": 0.0,
+      "left_ankle": 0.0,
+      "right_ankle": 0.0,
+      "left_foot": 0.0,
+      "right_foot": 0.0
+    },
+    "root_vs_original": {
+      "mean_m": 0.0,
+      "max_m": 0.0,
+      "mean_xz_m": 0.0,
+      "mean_y_m": 0.0,
+      "final_disp_err_m": 0.0
+    },
+    "bone_length": {
+      "max_dev_m": 9.003214646863267e-07,
+      "mean_dev_m": 6.723690992806766e-08,
+      "std_per_bone_mean_m": 8.953494660873202e-08
+    },
+    "foot_sliding": {
+      "mean_mps": 0.3373486957657429,
+      "p95_mps": 2.791027886977153,
+      "contact_frames": 267
+    },
+    "ground_penetration": {
+      "min_foot_height_m": 0.0,
+      "frames_below_floor_frac": 0.0,
+      "mean_depth_when_below_m": 0.0
+    },
+    "temporal": {
+      "duration_equal": true,
+      "frames": 179,
+      "ref_frames": 179,
+      "contact_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 36,
+        "test_events": 36
+      },
+      "direction_events": {
+        "recall": 1.0,
+        "precision": 1.0,
+        "ref_events": 0,
+        "test_events": 0
+      }
+    },
+    "jerk_mps3": 21.2626715439333,
+    "finite": true
+  },
+  "acceptance": {
+    "H1_duration_equal": true,
+    "H2_connectivity_bone_length": true,
+    "H3_root_trajectory": true,
+    "H4_end_effectors": true,
+    "H5_key_reproduction": true,
+    "H6_contact_timing": true,
+    "H7_deterministic": true,
+    "H8_recognizable": "manual"
+  },
+  "method": "hpp_v02_style:adaptive"
+}

@@ -1,0 +1,49 @@
+{
+  "record": {
+    "checkpoint": "/root/diffusion-motion-inbetweening/save/condmdi_random_joints/model000750000.pt",
+    "checkpoint_sha256": "e66f1f8697d0ff6437d35e9931b4a3138045b5b31415fae9180d4f6b5b01f036",
+    "sampler": "GaussianDiffusion.p_sample_loop",
+    "diffusion_steps": 1000,
+    "guidance_param": 0.0,
+    "text": "",
+    "imputate": false,
+    "feature_mode": "pos_rot_vel",
+    "seeds": [
+      10,
+      11,
+      12
+    ],
+    "n_frames": 179,
+    "max_frames": 196,
+    "observed_joint_frames": 792,
+    "observed_feature_entries": 9468,
+    "normalisation": "dataset/HumanML3D/Mean_abs_3d.npy, Std_abs_3d.npy (GMD abs-root statistics)",
+    "clip": "000021",
+    "reference": "full body every 5 frames from the original"
+  },
+  "jerk_mps3": [
+    153.38963871148218,
+    156.23758557813355,
+    154.90701713483313
+  ],
+  "constraint_vs_original": [
+    {
+      "mean": 0.06174888302536225,
+      "p95": 0.1307281502480988,
+      "max": 0.2419542435889666,
+      "n": 792
+    },
+    {
+      "mean": 0.06288526723610781,
+      "p95": 0.1304899646342611,
+      "max": 0.24267426931906522,
+      "n": 792
+    },
+    {
+      "mean": 0.061619807917693024,
+      "p95": 0.13134287434964334,
+      "max": 0.24316135661183644,
+      "n": 792
+    }
+  ]
+}

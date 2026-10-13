@@ -1,0 +1,4 @@
+# Runs inside the CondMDI environment (.env_condmdi: Python 3.8, torch 1.13.1+cu117, see docs/environment_report.md)
+# plus:
+pyyaml
+pytest

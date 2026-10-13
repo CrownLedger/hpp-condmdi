@@ -1,0 +1,938 @@
+{
+  "hpp": {
+    "000021__hpp_adaptive": {
+      "checks": {
+        "H1_duration_equal": true,
+        "H2_connectivity_bone_length": true,
+        "H3_root_trajectory": true,
+        "H4_end_effectors": true,
+        "H5_key_reproduction": true,
+        "H6_contact_timing": true,
+        "H7_deterministic": true,
+        "H8_recognizable": "manual"
+      },
+      "pass_auto": true
+    },
+    "000021__hpp_v02": {
+      "checks": {
+        "H1_duration_equal": true,
+        "H2_connectivity_bone_length": true,
+        "H3_root_trajectory": true,
+        "H4_end_effectors": true,
+        "H5_key_reproduction": true,
+        "H6_contact_timing": true,
+        "H7_deterministic": true,
+        "H8_recognizable": "manual"
+      },
+      "pass_auto": true
+    },
+    "000021__robotic_slerp": {
+      "checks": {
+        "H1_duration_equal": true,
+        "H2_connectivity_bone_length": true,
+        "H3_root_trajectory": true,
+        "H4_end_effectors": true,
+        "H5_key_reproduction": true,
+        "H6_contact_timing": true,
+        "H7_deterministic": true,
+        "H8_recognizable": "manual"
+      },
+      "pass_auto": true
+    },
+    "012314__hpp_adaptive": {
+      "checks": {
+        "H1_duration_equal": true,
+        "H2_connectivity_bone_length": true,
+        "H3_root_trajectory": true,
+        "H4_end_effectors": true,
+        "H5_key_reproduction": true,
+        "H6_contact_timing": true,
+        "H7_deterministic": true,
+        "H8_recognizable": "manual"
+      },
+      "pass_auto": true
+    },
+    "012314__hpp_v02": {
+      "checks": {
+        "H1_duration_equal": true,
+        "H2_connectivity_bone_length": true,
+        "H3_root_trajectory": true,
+        "H4_end_effectors": true,
+        "H5_key_reproduction": true,
+        "H6_contact_timing": true,
+        "H7_deterministic": true,
+        "H8_recognizable": "manual"
+      },
+      "pass_auto": true
+    },
+    "012314__robotic_slerp": {
+      "checks": {
+        "H1_duration_equal": true,
+        "H2_connectivity_bone_length": true,
+        "H3_root_trajectory": true,
+        "H4_end_effectors": false,
+        "H5_key_reproduction": true,
+        "H6_contact_timing": false,
+        "H7_deterministic": true,
+        "H8_recognizable": "manual"
+      },
+      "pass_auto": false
+    }
+  },
+  "generated": {
+    "000021__hpp_adaptive__A__dense": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 2,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "000021__hpp_adaptive__A__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "000021__hpp_adaptive__B__dense": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": false
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 3,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 2
+      },
+      "all_pass": false
+    },
+    "000021__hpp_adaptive__B__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": false
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 2
+      },
+      "all_pass": false
+    },
+    "000021__hpp_v02__A__dense": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 3,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": true
+    },
+    "000021__hpp_v02__A__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "000021__hpp_v02__B__dense": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": false
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": true,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 3,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 2
+      },
+      "all_pass": false
+    },
+    "000021__hpp_v02__B__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": false
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 2
+      },
+      "all_pass": false
+    },
+    "000021__robotic_slerp__B__dense": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": false
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 2
+      },
+      "all_pass": false
+    },
+    "000021__robotic_slerp__B__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": true,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 3,
+        "C2_constraints": 0,
+        "C3_root": 1,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_adaptive__A__dense": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 0,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_adaptive__A__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 2,
+        "C5_penetration": 3,
+        "C6_contact_timing": 0,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_adaptive__B__dense": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_adaptive__B__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 2,
+        "C5_penetration": 3,
+        "C6_contact_timing": 3,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_v02__A__dense": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 1,
+        "C5_penetration": 3,
+        "C6_contact_timing": 1,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_v02__A__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": true,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 1,
+        "C5_penetration": 3,
+        "C6_contact_timing": 1,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_v02__B__dense": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 3,
+        "C5_penetration": 3,
+        "C6_contact_timing": 0,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__hpp_v02__B__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": true,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 0,
+        "C4_foot_sliding": 2,
+        "C5_penetration": 3,
+        "C6_contact_timing": 0,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__robotic_slerp__B__dense": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": true,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 3,
+        "C4_foot_sliding": 0,
+        "C5_penetration": 3,
+        "C6_contact_timing": 0,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    },
+    "012314__robotic_slerp__B__observed_frames": {
+      "per_sample": [
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        },
+        {
+          "C1_valid": false,
+          "C2_constraints": false,
+          "C3_root": false,
+          "C4_foot_sliding": false,
+          "C5_penetration": true,
+          "C6_contact_timing": false,
+          "C7_jitter": true
+        }
+      ],
+      "samples_passing": {
+        "C1_valid": 0,
+        "C2_constraints": 0,
+        "C3_root": 0,
+        "C4_foot_sliding": 0,
+        "C5_penetration": 3,
+        "C6_contact_timing": 0,
+        "C7_jitter": 3
+      },
+      "all_pass": false
+    }
+  },
+  "reproducibility": {
+    "000021__hpp_v02__A__observed_frames": {
+      "max_diff_m": 0.0,
+      "C8_pass": true
+    }
+  },
+  "tolerances": {
+    "event_tolerance_s": 0.1,
+    "floor_height_m": 0.0,
+    "contact_height_m": 0.05,
+    "hpp": {
+      "H1_duration_equal": true,
+      "H2_bone_length_max_dev_m": 0.001,
+      "H3_root_mean_err_m": 0.05,
+      "H3_root_final_disp_err_m": 0.05,
+      "H4_end_effector_mean_err_m": 0.05,
+      "H5_key_reproduction_mean_err_m": 0.01,
+      "H6_contact_recall_min": 0.8,
+      "H7_deterministic": true,
+      "H8_recognizable": "manual"
+    },
+    "condmdi": {
+      "C1_bone_length_max_dev_m": 0.02,
+      "C2_constraint_mean_err_m": 0.05,
+      "C2_constraint_p95_err_m": 0.15,
+      "C3_root_mean_err_m": 0.1,
+      "C4_foot_slide_max_ratio": 1.5,
+      "C5_min_foot_height_m": -0.03,
+      "C6_contact_recall_min": 0.8,
+      "C7_jerk_max_ratio": 1.1,
+      "C8_reproducible_max_diff_m": 0.0001,
+      "C9_perceptually_plausible": "manual"
+    }
+  }
+}

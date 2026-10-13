@@ -1,0 +1,9 @@
+clips:
+  - {id: '000021', note: 'walking in a circle (raw HumanML3D joints, processed with the dataset notebook pipeline)'}
+  - {id: '012314', note: 'tennis swing with footwork (processed HumanML3D sample)'}
+projectors: [hpp_v02, hpp_adaptive]
+root_policies: [observed_frames, dense]   # root observed only where HPP observes something, or on every frame
+experiments:
+  A: {obs_source: original}  # HPP key-selection test: real features at HPP-selected entries only
+  B: {obs_source: rough}     # full HPP test: features encoded from the rough motion only
+reference_run: {name: condmdi_fullbody_every5, note: 'all 22 joints of the original every 5 frames (CondMDI benchmark_sparse T=5); baseline for jerk'}
